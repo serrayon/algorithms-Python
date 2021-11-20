@@ -7,4 +7,6 @@ def insertion(list_a):
             list_a[i], list_a[i -1] = list_a[i -1],list_a[i]
             i = i - 1
     return list_a
+
 print(insertion([3,6,6534,7,83,54325,0]))
+    

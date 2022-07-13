@@ -1,46 +1,38 @@
-def binary(sequence, item):
-    begin_index = 0 
-    end_index = len(sequence) - 1
-    
-    while begin_index <= end_index:
-        midpoint = begin_index + (end_index - begin_index) // 2
-        midpoint_value = sequence[midpoint]
-        if midpoint_value == item:
-            return midpoint
-        
-        elif item < midpoint_value:
-            end_index = midpoint -1 
-        
-        else: 
-            begin_index = midpoint + 1
-    
-    return None 
+import random
 
-sequence_a = [2,4,37,7,9,4,99,3]
-item_a = 3 
+def binary_search(input_list , target_value):
+    '''
+    Function executing binary search to find if element is in a list.
+    parameters:
+    - list
+    - target
+    return value: True/False (bool) and index
+    '''
+    input_list.sort()
+    min_index = 0
+    max_index = len(input_list) -1
 
-print(binary(sequence_a, item_a))
-
-def binary_search(sequence, item):
-    begin_index = 0
-    end_index = len(sequence) - 1
-
-    while begin_index <= end_index:
-        midpoint = begin_index + (end_index - begin_index) // 2
-        midpoint_value = sequence[midpoint]
-        if midpoint_value == item:
-            return midpoint
-
-        elif item < midpoint_value:
-            end_index = midpoint - 1
-
+    while max_index >= min_index:
+        mid_index =(max_index+min_index)//2
+        #print (f'min: {min_index} , mid: {mid_index} , max: {max_index}')
+        if input_list[mid_index] == target_value:
+            return mid_index , True
+        elif input_list[mid_index] < target_value:
+            min_index = mid_index+1
         else:
-            begin_index = midpoint + 1
+            max_index = mid_index-1
+    return False
 
-    return None
+def main():
+    #bin_list = list(range(6,501 + 1))
+    #bin_list = [1,2,3,5,6,9,11,12,15,20,22,34,35,101,1111,234432]
+    bin_list = [23,34,12,1,0,45,23,3,2,45,69,-2,-9]
+    search_value_a = 1
+    search_value_b = 69
 
-sequence_a = [2,4,5,6,7,8,9,10,12,13,14,52,5,3,63,0]
-item_a = 3
+    print (binary_search(bin_list,search_value_a)) 
+    print (binary_search(bin_list,search_value_b))
+    #print (bin_list)
 
-
-print(binary_search(sequence_a, item_a))
+if __name__ == '__main__':
+    main()

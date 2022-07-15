@@ -1,20 +1,27 @@
 def quick(sequence):
     length = len(sequence)
     if length <= 1:
-        return sequence
+        return  sequence
     else:
         pivot = sequence.pop()
         
     greater_list = [ ]
-    lesser_list= [ ]
+    lower_list = [ ]
     
     for item in sequence:
         if item > pivot:
             greater_list.append(item)
         else:
-            lesser_list.append(item)
+            lower_list.append(item)
             
-    return quick(lesser_list) + [pivot] + quick(greater_list)
+    return quick(lower_list) + [pivot] + quick(greater_list)
 
-
-print(quick([4,457,3,0,-1,3,5423]))
+def main():
+    
+    bin = [45,-3,0,64,8765876,23,23,.2]
+    #print (quick([3,6,54,12,78,9,0,0,2,1,2,-9,4321542,.5,-5,-5,-.5,-10,-10]))
+    print (quick(bin))
+    
+if __name__ == '__main__':
+    main()
+   

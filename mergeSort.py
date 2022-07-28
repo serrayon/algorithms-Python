@@ -29,3 +29,9 @@ def mergeSort(myList):
             myList[k] = left[i]
             i += 1
             k += 1
+
+        while j < len(right):
+            myList[k]=right[j]
+            j += 1
+            k += 1
+            

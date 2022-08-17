@@ -18,14 +18,12 @@ if __name__ == '__main__':
     
     
 def linear(input_list, target):
-    
     input_list.sort()
-    global index
-    index = input_list.index(target)
     
     for each in input_list:
+        index = input_list.index(target)
         if each == target:
-            return True
+            return True, target,index, inputList
     return linear
 def main():
     bin = [3,2,6,73,4,65,7,678,3]

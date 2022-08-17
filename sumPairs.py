@@ -1,14 +1,17 @@
 
 
 def sumPairs(arr, pair):
+    # search first element in the array
     for i in range(len(arr)-1):
+        # search other element in the array
         for j in range(i+1,len(arr)):
+            # if these two elements sum to pair, print the pair
             if arr[i] + arr[j] == pair:
                 print("The target number",pair,"is: (",arr[i], ",",arr[j],")")
                 
 bin = [1,3,6,4,9,7]
 pairSum = 10
-print(sumPairs(bin,pairSum))
+sumPairs(bin,pairSum)
 
 
 def sumPairs(arr, pair_sum):

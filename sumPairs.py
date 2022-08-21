@@ -31,17 +31,19 @@ sumPairs(num_arr,pairSum)
 
 
 def sumPairs(arr,pairsSum):
+    arr.sort()
     hastable = { }
     for i in range(len(arr)-1):
+        
         complement = pairsSum - arr[i]
         if complement in hastable:
-            print('The combo of :', arr[i], 'and',complement,'add up to :',pairSum,arr[-1],'; was represented as:')
-        if pairsSum - arr[i] in hastable:
-            print([hastable[pairsSum - arr[i]],i])
-        else:
-            hastable[arr[i]] = arr[i]
+            index = arr.index(complement) 
+            index2 = arr.index(arr[i])
+            print('The combo of :', arr[i], 'and',complement,'add up to :',pairSum,'; was represented as:', index,index2)
+            print(arr)
+        hastable[arr[i]] = arr[i]
         
-num_arr = [4,5,1,8,0,-1,34,34,-25,1009,-1000,pow(3,2)]
+num_arr = [4,5,1,6,8,0,-1,34,-25,1009,3,-25,10]
 pairSum = 9
 
 sumPairs(num_arr,pairSum)       

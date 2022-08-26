@@ -13,7 +13,7 @@ bin = [1,3,6,4,9,7]
 pairSum = 10
 sumPairs(bin,pairSum)
 
-//this similar to previous but it returns the index of the numbres used.
+#this similar to previous but it returns the index of the numbers used.
 def sumPairs(arr, pair_sum):
     hashTable = { }
     
@@ -28,11 +28,28 @@ pairSum = 9
 sumPairs(num_arr,pairSum) 
 
 
+#This brings back index using the the second print statement
+def twoSum(nums, target):
+    nums.sort()
+    hashTable = {}
+    for i in range(len(nums)):
+        complement = target - nums[i]
+        if complement in hashTable:
+            print('The combination of:',complement,'and',nums[i],'add up to,',target)
+            print([hashTable[target - nums[i]],i],nums)
+        else:
+            hashTable[nums[i]]= i
+input_list = [2,8,12,15,5,17,3]
+
+twoSum(input_list, 20)
+
+
+#This brings back the index using index method
 
 def sumPairs(arr,pairsSum):
     arr.sort()
     hastable = { }
-    for i in range(len(arr)-1):
+    for i in range(len(arr)):
         
         complement = pairsSum - arr[i]
         if complement in hastable:

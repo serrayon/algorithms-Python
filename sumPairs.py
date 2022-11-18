@@ -46,6 +46,7 @@ twoSum(input_list, 20)
 
 #This brings back the index using index method
 
+import time
 def sumPairs(arr,pairsSum):
     arr.sort()
     hastable = { }
@@ -55,11 +56,18 @@ def sumPairs(arr,pairsSum):
         if complement in hastable:
             index = arr.index(complement) 
             index2 = arr.index(arr[i])
-            print('The combo of :', arr[i], 'and',complement,'add up to :',pairSum,'; the index of the integers is :', index,',',index2)
+            print('The combo of :', arr[i], 'and',complement,'add up to :',pairsSum,'; the index of the integers is :', index,',',index2)
             print(arr)
         hastable[arr[i]] = arr[i]
         
-num_arr = [4,5,1,6,8,0,-1,34,-25,1009,3,-25,10]
-pairSum = 9
-
-sumPairs(num_arr,pairSum)       
+def main():
+    
+    st = time.time()
+    num_arr = [4,5,1,6,8,0,-1,34,-25,1009,3,-25,10]
+    pairSum = 9
+    sumPairs(num_arr,pairSum) 
+    et = time.time()
+    elapsedTime = et-st
+    print(f'The elapsed time is: {elapsedTime} seconds')
+if __name__=='__main__':
+    main()  

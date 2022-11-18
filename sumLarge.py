@@ -1,3 +1,4 @@
+import time
 def sumLarge(arr):
     
     total = 0 
@@ -5,6 +6,12 @@ def sumLarge(arr):
         
         total = total + arr[i]
     return total
-    
-bin = [1,210009,65346354,3654354774635,-10000000000000000]
-print(sumLarge(bin))
+def main():
+    st = time.time()
+    bin = [1,210009,65346354,3654354774635,-10000000000000000]
+    print(sumLarge(bin))
+    et = time.time()
+    elapsedTime = et - st 
+    print(f'The elapsed time is: {elapsedTime} seconds')
+if __name__=='__main__':
+    main()

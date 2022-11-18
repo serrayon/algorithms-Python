@@ -15,7 +15,6 @@ def binary_search(input_list , target_value):
 
     while max_index >= min_index:
         mid_index =(max_index+min_index)//2
-        #print (f'min: {min_index} , mid: {mid_index} , max: {max_index}')
         if input_list[mid_index] == target_value:
             return mid_index , True
         elif input_list[mid_index] < target_value:

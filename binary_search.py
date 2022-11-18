@@ -1,4 +1,5 @@
 import random
+import time
 
 def binary_search(input_list , target_value):
     '''
@@ -24,6 +25,7 @@ def binary_search(input_list , target_value):
     return False
 
 def main():
+    st = time.time()
     #bin_list = list(range(6,501 + 1))
     #bin_list = [1,2,3,5,6,9,11,12,15,20,22,34,35,101,1111,234432]
     bin_list = [23,34,12,1,0,45,23,3,2,45,69,-2,-9]
@@ -33,6 +35,9 @@ def main():
     print (binary_search(bin_list,search_value_a)) 
     print (binary_search(bin_list,search_value_b))
     #print (bin_list)
+    et = time.time()
+    elapsedTime = et-st
+    print(f'The elapsed time is: {elapsedTime} seconds')
 
 if __name__ == '__main__':
     main()

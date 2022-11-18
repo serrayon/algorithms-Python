@@ -36,6 +36,7 @@ def mergeSort(myList):
             myList[k]=right[j]
             j += 1
             k += 1
+    return myList
 def main():
     st = time.time()
     test = [9,8,7,6,7,8,9,6,5,4,3,2,7,6,8,6,]

@@ -1,3 +1,5 @@
+import time
+
 def mergeSort(myList):
     if len(myList) > 1:
         mid = len(myList) // 2
@@ -34,4 +36,13 @@ def mergeSort(myList):
             myList[k]=right[j]
             j += 1
             k += 1
+def main():
+    st = time.time()
+    test = [9,8,7,6,7,8,9,6,5,4,3,2,7,6,8,6,]
+    print(mergeSort(test))
+    et = time.time()
+    elapsedTime = et-st
+    print(f'The elapsed time is : {elapsedTime} seconds')
+if __name__=='__main__':
+    main()
             

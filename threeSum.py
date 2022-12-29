@@ -1,3 +1,33 @@
+# first one is my fav implementation
+def three_sum(pairs):
+    if len(pairs) <=2:
+        raise ValueError(f'Expecting a list with 3 or more elements, your list only has {pairs}')
+    pairs.sort()
+    result = set()
+    for i in range(len(pairs)-2):
+        
+        l = i+1
+        r = len(pairs)-1
+
+        while l < r:
+            sum = pairs[i] + pairs[l] + pairs[r]
+            if sum == 9:
+                #result.add(([pairs[i], pairs[l], pairs[r]])
+                result.add(tuple((pairs[i],pairs[l],pairs[r])))
+                
+                l += 1 
+                r -= 1
+            if sum < 9:
+                l += 1
+            if sum > 9:
+                r -= 1
+            
+    return result
+
+
+print(three_sum([1, 0,1,9,-8,-9,5,6,7,8,-2,-3,-9,-9]))
+
+
 def threeSum(nums):       
         # special case
         if len(nums) <= 2:

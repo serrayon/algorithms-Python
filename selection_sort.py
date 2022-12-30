@@ -1,3 +1,18 @@
+def selection(arr):
+    indexLength = range(0,len(arr)-1)
+    for i in indexLength:
+        minValue=i 
+        for j in range(i+1,len(arr)):
+            if arr[j] < arr[i]:
+                minValue = j 
+            if minValue != i:
+                arr[i],arr[minValue]=arr[minValue],arr[i]
+    return arr
+
+
+test = [9,8,7,6,5,4,3,2,1]
+print(selection(test))
+
 '''
 not stable, this version will incorrectly place -2 in the wrong spot. The second version without the min_value variable works though.
 Quick sort, heap sort and selection not stable'''

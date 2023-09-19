@@ -46,4 +46,37 @@ def main():
     print(f'The elapsed time is : {elapsedTime} seconds')
 if __name__=='__main__':
     main()
-            
+
+
+
+#cleaner and easier to follow
+def merge(numbers):
+    if len(numbers) <= 1:
+        return numbers
+
+    mid = len(numbers) // 2
+    left = numbers[:mid]
+    right = numbers[mid:]
+
+    left = merge(left)  # Recursive call to sort the left sublist
+    right = merge(right)  # Recursive call to sort the right sublist
+
+    # Merge the sorted left and right sublists
+    result = []
+    i = j = 0
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+
+    result.extend(left[i:])  # Append any remaining elements from left
+    result.extend(right[j:])  # Append any remaining elements from right
+
+    return result
+
+bin = [87, 56, 34, 4356, 76, 678, 56, 3423, 3456, 67, 0, -9, 5, 87, 0, .9, -.9]
+print(merge(bin))
+

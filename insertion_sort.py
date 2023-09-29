@@ -19,3 +19,17 @@ def main():
     print(f'Elapsed time is: {elapsedTime} seconds')
 if __name__=='__main__':
     main()
+
+
+#This makes more sense the index 1 is removed, It would still work but only because its making the list from left to right
+# the list is now being compared from index 0 and index 1
+def insertion(integers):
+    index_length = range(len(integers))
+    for i in index_length:
+        value_sort = integers[i]
+        while integers[i-1] > value_sort and i > 0:
+            integers[i],integers[i-1]=integers[i-1],integers[i]
+            i = i - 1 
+    return integers
+bin = [9,8,7,6,5,4,3,2,1,98,7,6,5,4,6,7,345,2,2,57,3,-8,9,0,0,.8]
+print(insertion(bin))

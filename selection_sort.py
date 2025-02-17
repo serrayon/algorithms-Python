@@ -30,7 +30,8 @@ print(selection(someList))
 '''
 not stable, this version will incorrectly place -2 in the wrong spot. The second version without the min_value variable works though.
 Quick sort, heap sort and selection not stable'''
-#merge(Merge Sort is already stable if implemented properly because merging happens left to right, preserving order.), and quick(naturaly unstable elements can get swapped across partitions.)
+#merge(Merge Sort is already stable if implemented properly because merging happens left to right, preserving order.), 
+#and quick(naturaly unstable elements can get swapped across partitions.)
 
 def stable_selection_sort(arr):
     n = len(arr)
